@@ -1,5 +1,17 @@
 import { NextResponse } from 'next/server'
 
+function getBaseUrl(request: Request) {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, '')
+  }
+  const host = request.headers.get('x-forwarded-host') || request.headers.get('host')
+  const proto = request.headers.get('x-forwarded-proto') || (process.env.NODE_ENV === 'production' ? 'https' : 'http')
+  if (host) {
+    return `${proto}://${host}`
+  }
+  return 'http://localhost:3000'
+}
+
 /**
  * GET /api/auth/google/callback
  * Menerima authorization code dari Google, tukar dengan access token,
@@ -11,7 +23,7 @@ export async function GET(request: Request) {
   const state = searchParams.get('state') ?? '/admin' // callbackUrl
   const error = searchParams.get('error')
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+  const appUrl = getBaseUrl(request)
   const loginUrl = `${appUrl}/login`
 
   if (error || !code) {
