@@ -1,124 +1,113 @@
 # Naskah Video Demo NalarPublik (Durasi: 5 Menit)
 
-> **Tema:** Menjembatani Anggaran APBD, Data Riil Lapangan BPS, dan Suara Warga.  
-> **Studi Kasus:** Kabupaten Toba, Sumatera Utara.  
-> **Format:** Sederhana, Lugas, Narasi Kuat & Berdampak (*High-Impact*).
+Tema: Menjembatani Anggaran APBD, Data Riil Lapangan BPS, dan Suara Warga
+Studi Kasus: Kabupaten Toba, Sumatera Utara
+Presenter Tunggal: Rony Pangaribuan (Project Manager)
+Anggota Tim Pengembang:
+- Rony Pangaribuan (Project Manager & Presenter)
+- Maxwell Rumahorbo (Front End Developer)
+- Boy Simamora (Back End Developer)
 
 ---
 
-## ⏱️ Rangkuman Rundown Waktu (Total: 5 Menit)
+## Rangkuman Waktu Video (Total: 5 Menit)
 
-| Bagian | Durasi | Topik | Pembicara |
-| :--- | :---: | :--- | :--- |
-| **Bagian 1** | 00:00 - 00:45 (45s) | Pembuka Masalah & Perkenalan Tim | **Rony Pangaribuan** (PM) |
-| **Bagian 2** | 00:45 - 03:45 (3 Menit) | Live Demo 4 Fitur Utama Platform | **Maxwell Rumahorbo** (FE) & **Boy Simamora** (BE) |
-| **Bagian 3** | 03:45 - 04:30 (45s) | Rencana Pengembangan (*Roadmap*) | **Boy Simamora** (BE) |
-| **Bagian 4** | 04:30 - 05:00 (30s) | Kesimpulan & Penutup | **Rony Pangaribuan** (PM) |
-
----
-
-## 🎬 Naskah Lengkap & Panduan Layar
-
-### BAGIAN 1: PEMBUKA & PERKENALAN TIM (00:00 – 00:45)
-*Layar: Kamera aktif menghadap presenter / Menampilkan Beranda NalarPublik.*
-
-**[00:00 - 00:20] Hook Masalah**
-> **Rony Pangaribuan (Project Manager):**  
-> *"Horas, salam sejahtera bagi kita semua.*  
-> *Sering kali dokumen anggaran daerah tebalnya beratus-ratus halaman, tapi warga sulit mengetahui: ke mana sebenarnya uang rakyat dibelanjakan? Dan apakah pembagian anggaran tersebut sudah menjawab masalah nyata di lapangan?*  
-> *Inilah **NalarPublik** — platform pendukung keputusan berbasis data yang menghubungkan data resmi APBD, data statistik BPS, dan aspirasi partisipatif masyarakat."*
-
-**[00:20 - 00:45] Perkenalan Tim**
-> **Rony Pangaribuan (Project Manager):**  
-> *"Perkenalkan, kami dari Tim NalarPublik:*  
-> *1. Saya sendiri, **Rony Pangaribuan**, sebagai Project Manager.*  
-> *2. Rekan saya, **Maxwell Rumahorbo**, sebagai Front End Developer.*  
-> *3. Dan rekan saya, **Boy Simamora**, sebagai Back End Developer.*  
-> *Untuk fase percontohan ini, sistem kami mengambil fokus pada 4 kecamatan utama di Kabupaten Toba: Balige, Laguboti, Porsea, dan Habinsaran. Mari kita lihat langsung bagaimana platform ini bekerja."*
+| Bagian | Menit | Durasi | Topik Utama |
+| :--- | :---: | :---: | :--- |
+| Bagian 1 | 00:00 - 00:45 | 45 detik | Masalah Utama & Perkenalan Tim |
+| Bagian 2 | 00:45 - 03:45 | 3 menit | Demo 4 Fitur Utama Platform |
+| Bagian 3 | 03:45 - 04:30 | 45 detik | Rencana Pengembangan (Roadmap) |
+| Bagian 4 | 04:30 - 05:00 | 30 detik | Kesimpulan & Penutup |
 
 ---
 
-### BAGIAN 2: LIVE DEMO FITUR UTAMA (00:45 – 03:45)
-*Layar: Tangkapan layar web live `https://nalarpublik.vercel.app`.*
+## Naskah Lengkap dan Panduan Tampilan Layar
 
-#### 📍 Fitur 1: Peta Wilayah & Gap Analysis (00:45 – 01:30)
-*Layar: Masuk ke halaman **Peta Anggaran** (`/map`). Klik pin merah Habinsaran.*
+### BAGIAN 1: PEMBUKA DAN PERKENALAN TIM (00:00 - 00:45)
+Panduan Layar: Menampilkan presenter di kamera, lalu beralih ke halaman Beranda NalarPublik (https://nalarpublik.vercel.app).
 
-> **Maxwell Rumahorbo (Front End):**  
-> *"Kita mulai dari menu pertama: **Peta Wilayah Gap Analysis**.*  
-> *Di sini, publik dan pengambil kebijakan bisa melihat Kabupaten Toba bukan sekadar garis batas peta, melainkan peta prioritas kebutuhan.*  
-> *Perhatikan pin berwarna merah di **Kecamatan Habinsaran**.*  
-> *Ketika kita klik, sistem langsung membandingkan kondisi riil di lapangan vs alokasi anggaran APBD:*  
-> *- Data BPS menunjukkan kerusakan jalan di Habinsaran mencapai **46%**.*  
-> *- Namun, porsi APBD infrastruktur di sana hanya dialokasikan **16%**.*  
-> *Sistem kami secara otomatis mendeteksi adanya **Defisit Anggaran -30% (Status Kritis)**. Ini membuktikan bahwa pembagian anggaran selama ini belum tepat sasaran."*
+[00:00 - 00:20] Masalah Utama:
+"Horas, salam sejahtera bagi kita semua.
+Sering kali dokumen anggaran daerah tebalnya beratus-ratus halaman, tetapi warga sulit mengetahui: ke mana sebenarnya uang rakyat dialokasikan? Dan yang paling penting, apakah pembagian anggaran tersebut sudah menjawab masalah nyata di lapangan?
+Inilah NalarPublik, sebuah platform web pengambil keputusan berbasis data yang menghubungkan data resmi APBD, data statistik BPS, dan aspirasi partisipatif masyarakat."
 
----
-
-#### 🗳️ Fitur 2: Simulator Anggaran Partisipatif Warga (01:30 – 02:15)
-*Layar: Pindah ke menu **Simulator** (`/simulator`). Pilih Habinsaran, geser slider Infrastruktur ke 45%, ketik catatan aspirasi, klik Kirim.*
-
-> **Maxwell Rumahorbo (Front End):**  
-> *"Lalu bagaimana solusinya? Di menu kedua, kami menghadirkan **Simulator Anggaran Partisipatif**.*  
-> *Di halaman ini, warga biasa tidak lagi hanya jadi penonton, tetapi menjadi perencana anggaran.*  
-> *Warga memilih kecamatannya, lalu membagikan kuota 100% anggaran ke 4 sektor utama: Infrastruktur, Kesehatan, Pendidikan, dan Sosial.*  
-> *Misalnya, warga Habinsaran menaikkan porsi jalan menjadi 45%, lalu menulis catatan: 'Jalan antar desa longsor, hasil panen kopi sulit dibawa ke kota.'*  
-> *Saat tombol 'Kirim Aspirasi' ditekan, suara masyarakat ini langsung tersimpan dan diteruskan secara instan ke sistem pemerintah."*
+[00:20 - 00:45] Perkenalan Tim:
+"Perkenalkan, saya Rony Pangaribuan, selaku Project Manager pada proyek NalarPublik ini. 
+Sistem ini kami kembangkan bersama dua rekan saya:
+Pertama, Maxwell Rumahorbo sebagai Front End Developer yang merancang antarmuka dan interaktivitas visual.
+Kedua, Boy Simamora sebagai Back End Developer yang menangani logika kalkulasi, data, dan arsitektur sistem.
+Untuk fase percontohan ini, kami mengambil fokus pada empat kecamatan utama di Kabupaten Toba: Balige, Laguboti, Porsea, dan Habinsaran. Mari kita lihat langsung bagaimana platform ini bekerja."
 
 ---
 
-#### 📊 Fitur 3: Dasbor Keputusan Admin & Rekomendasi Otomatis (02:15 – 03:00)
-*Layar: Masuk ke menu **Login Admin** (`/login`), login dengan Google/Manual, masuk ke Dasbor Admin (`/admin`). Tampilkan grafik 3 batang dan Alert Anomali.*
+### BAGIAN 2: DEMO FITUR UTAMA (00:45 - 03:45)
+Panduan Layar: Tangkapan layar web live nalarpublik.vercel.app.
 
-> **Boy Simamora (Back End):**  
-> *"Sekarang mari kita masuk ke sisi pemerintah: **Dasbor Analitik & Pengambil Keputusan**.*  
-> *Akses admin ini terkunci secara aman dengan whitelist khusus.*  
-> *Di dasbor ini, pembuat kebijakan di Bappeda atau DPRD disajikan perbandingan 3 data sekaligus dalam satu grafik:*  
-> *1. Masalah riil lapangan (BPS).*  
-> *2. Rencana alokasi anggaran pemerintah saat ini.*  
-> *3. Dan rata-rata keinginan masyarakat hasil simulator tadi.*  
-> *Tidak hanya menyajikan grafik, sistem kami juga memiliki **Mesin Rekomendasi Kebijakan Otomatis**. Sebelum rapat Musrenbang digelar, sistem sudah memberikan rekomendasi berbasis data: 'Habinsaran butuh realokasi minimal +15% ke sektor jalan, yang dapat dialihkan dari pos belanja yang mengalami surplus'."*
+#### Fitur 1: Peta Wilayah dan Analisis Kesenjangan (00:45 - 01:30)
+Panduan Layar: Buka halaman Peta Anggaran (/map). Arahkan kursor dan klik pin merah pada Kecamatan Habinsaran.
 
----
-
-#### 📄 Fitur 4: Pusat Penerjemah Dokumen DPA ke Bentuk Fisik (03:00 – 03:45)
-*Layar: Pindah ke halaman **Data Terbuka** (`/open-data`), buka pop-up upload DPA, pilih contoh DPA, terbitkan, lalu tunjukkan kartu fisik (Km jalan, ruang kelas, posyandu).*
-
-> **Maxwell Rumahorbo (Front End):**  
-> *"Fitur unggulan terakhir kami ada di **Portal Data Terbuka: Penerjemah Dokumen DPA**.*  
-> *Selama ini dokumen anggaran daerah membingungkan warga karena berisi kode rekening birokrasi.*  
-> *Di NalarPublik, admin cukup mengunggah berkas DPA resmi.*  
-> *Dalam hitungan detik, sistem memindai pagu anggaran dan langsung menerjemahkan angka miliaran rupiah tersebut menjadi **wujud fisik nyata di lapangan**:*  
-> *- Rp 4 Miliar anggaran jalan otomatis diterjemahkan menjadi: **5 Km Pengaspalan Jalan Hotmix**.*  
-> *- Anggaran kesehatan langsung dikonversi menjadi: **Unit Posyandu Gizi Balita**.*  
-> *- Anggaran pendidikan dikonversi menjadi: **Ruang Kelas Sekolah Dasar yang Direhab**.*  
-> *Data ini transparan dan bisa diunduh oleh siapa saja dalam format CSV."*
+"Fitur pertama adalah Peta Wilayah dan Analisis Kesenjangan atau Gap Analysis.
+Di halaman ini, publik maupun pemerintah daerah dapat melihat Kabupaten Toba berdasarkan prioritas kebutuhan riil, bukan sekadar peta administratif.
+Perhatikan pin berwarna merah di Kecamatan Habinsaran.
+Ketika kita klik, sistem langsung membandingkan kondisi riil lapangan dengan porsi anggaran daerah:
+Data BPS mencatat bahwa tingkat kerusakan jalan di Habinsaran mencapai 46 persen.
+Namun, pemerintah daerah hanya mengalokasikan 16 persen anggaran infrastruktur ke wilayah ini.
+Sistem kami secara otomatis menghitung dan memberikan peringatan: terdapat defisit anggaran sebesar minus 30 persen dengan status Kritis. Ini membuktikan secara data bahwa alokasi anggaran selama ini belum proporsional dengan masalah di lapangan."
 
 ---
 
-### BAGIAN 3: RENCANA PENGEMBANGAN / ROADMAP (03:45 – 04:30)
-*Layar: Menampilkan slide/grafik rencana pengembangan atau tampilan ringkasan platform.*
+#### Fitur 2: Simulator Anggaran Partisipatif (01:30 - 02:15)
+Panduan Layar: Buka halaman Simulator (/simulator). Pilih Kecamatan Habinsaran, geser slider Infrastruktur ke 45 persen, ketik catatan singkat di kotak aspirasi, lalu klik tombol Kirim Aspirasi.
 
-> **Boy Simamora (Back End):**  
-> *"Untuk rencana pengembangan ke depan, kami telah merancang 3 tahapan integrasi:*  
-> *1. **Ekspansi Cakupan Wilayah:** Memperluas cakupan dari 4 kecamatan percontohan menjadi seluruh 16 kecamatan di Kabupaten Toba, hingga kabupaten lain di kawasan Danau Toba.*  
-> *2. **Integrasi API Nasional:** Menghubungkan sistem secara langsung ke Web API BPS Pusat dan sistem SIPD Kemendagri agar sinkronisasi data terjadi otomatis secara berkala.*  
-> *3. **Verifikasi Aspirasi Berbasis NIK/Lokasi:** Menambahkan verifikasi warga berbasis geolokasi agar aspirasi yang masuk semakin terverifikasi dan akuntabel untuk Musrenbang resmi."*
-
----
-
-### BAGIAN 4: KESIMPULAN & PENUTUP (04:30 – 05:00)
-*Layar: Kamera presenter kembali aktif / Menampilkan Logo & Slogan NalarPublik.*
-
-> **Rony Pangaribuan (Project Manager):**  
-> *"NalarPublik membuktikan bahwa transparansi anggaran bukan sekadar menampilkan angka, melainkan memastikan bahwa setiap rupiah uang rakyat dialokasikan pada masalah yang paling membutuhkan bukti dan solusi.*  
-> *Dari Toba, untuk tata kelola anggaran daerah yang lebih adil, cerdas, dan transparan.*  
-> *Saya Rony Pangaribuan, bersama Maxwell Rumahorbo dan Boy Simamora, pamit undur diri.*  
-> *Horas, Mauliate, terima kasih!"*
+"Untuk menyelesaikan ketimpangan tersebut, kami menghadirkan fitur kedua: Simulator Anggaran Partisipatif.
+Di sini warga tidak lagi pasif, melainkan ikut berperan sebagai perencana kebijakan.
+Warga cukup memilih kecamatan domisilinya, lalu membagikan kuota 100 persen anggaran ke empat sektor utama: Infrastruktur, Kesehatan, Pendidikan, dan Sosial.
+Sebagai contoh, warga Habinsaran dapat menaikkan porsi infrastruktur menjadi 45 persen, lalu menambahkan catatan lapangan: 'Jalan antar-desa rusak berat dan rawan longsor saat musim panen.'
+Saat tombol Kirim Aspirasi ditekan, data ini langsung tersimpan ke sistem dan siap dianalisis oleh pemerintah daerah."
 
 ---
 
-## 💡 Tips Praktis Saat Merekam Video:
-1. **Kecepatan Bicara:** Santai, percaya diri, jangan terburu-buru (tempo rata-rata 120-130 kata per menit pas untuk 5 menit).
-2. **Kursor Layar:** Arahkan kursor tepat ke elemen yang sedang dijelaskan (misal: saat menyebut angka 46%, sorot angka 46% di pop-up peta).
-3. **Pencahayaan & Audio:** Pastikan mic jernih dan layar browser menggunakan zoom level 100% atau 110% agar teks terbaca jelas di video.
+#### Fitur 3: Dasbor Keputusan Admin dan Detektor Anomali (02:15 - 03:00)
+Panduan Layar: Buka halaman Dasbor Admin (/admin). Tunjukkan grafik perbandingan 3 batang per sektor dan kartu peringatan rekomendasi Musrenbang.
+
+"Sekarang kita beralih ke sisi pengambil kebijakan melalui Dasbor Keputusan Admin.
+Dasbor ini dilindungi sistem keamanan khusus untuk memastikan hanya pihak berwenang yang dapat mengakses data analitik.
+Di dasbor ini, pembuat kebijakan di Bappeda atau DPRD disajikan perbandingan tiga sumber data sekaligus dalam satu grafik:
+Pertama, tingkat masalah lapangan dari BPS.
+Kedua, rencana alokasi anggaran daerah saat ini.
+Ketiga, rata-rata keinginan masyarakat dari simulator tadi.
+Tidak hanya grafik, sistem kami dilengkapi Mesin Rekomendasi Kebijakan Otomatis. Sebelum rapat Musrenbang digelar, sistem sudah memberikan arahan konkret: 'Habinsaran memerlukan realokasi minimal plus 15 persen ke sektor infrastruktur jalan, yang dapat dialihkan dari pos anggaran sektor yang mengalami surplus'."
+
+---
+
+#### Fitur 4: Penerjemah Dokumen DPA ke Ekuivalen Fisik (03:00 - 03:45)
+Panduan Layar: Pindah ke halaman Data Terbuka (/open-data). Klik tombol Unggah / Terjemahkan DPA Baru, pilih salah satu contoh DPA, klik Terbitkan, lalu sorot kartu ekuivalensi fisik (Km jalan, posyandu gizi, ruang kelas) dan tombol unduh CSV.
+
+"Fitur unggulan keempat kami berada di Portal Data Terbuka: Pusat Penerjemah Dokumen DPA.
+Dokumen DPA biasanya sulit dipahami oleh masyarakat umum karena dipenuhi kode rekening birokrasi.
+Di NalarPublik, admin cukup mengunggah berkas DPA resmi.
+Sistem kami secara otomatis memindai pagu anggaran dan langsung menerjemahkan nominal miliaran rupiah tersebut menjadi wujud fisik nyata di lapangan:
+Anggaran jalan empat miliar rupiah otomatis diterjemahkan menjadi lima kilometer aspal hotmix.
+Anggaran kesehatan langsung dihitung menjadi unit posyandu gizi balita untuk pencegahan stunting.
+Dan anggaran pendidikan dihitung menjadi jumlah ruang kelas sekolah dasar yang bisa direhabilitasi total.
+Seluruh data ini transparan dan dapat diunduh oleh masyarakat dalam format CSV."
+
+---
+
+### BAGIAN 3: RENCANA PENGEMBANGAN SISTEM (03:45 - 04:30)
+Panduan Layar: Menampilkan halaman utama atau slide ringkas arsitektur masa depan NalarPublik.
+
+"Untuk tahapan pengembangan ke depan, kami telah menyiapkan tiga rencana strategis:
+Pertama, Ekspansi Wilayah: Memperluas cakupan data dari empat kecamatan percontohan menjadi seluruh 16 kecamatan di Kabupaten Toba, hingga kabupaten lain di kawasan Danau Toba.
+Kedua, Integrasi API Nasional: Menghubungkan sistem secara otomatis ke Web API BPS Pusat dan sistem SIPD Kemendagri agar pembacaan APBD dan indikator kemiskinan selalu tersinkronisasi secara berkala tanpa input manual.
+Ketiga, Validasi Aspirasi Warga: Menambahkan verifikasi berbasis geolokasi dan integrasi kependudukan agar setiap usulan yang masuk ke simulator memiliki bobot validasi yang kuat untuk dibawa langsung ke forum Musrenbang resmi."
+
+---
+
+### BAGIAN 4: KESIMPULAN DAN PENUTUP (04:30 - 05:00)
+Panduan Layar: Kamera presenter kembali penuh di layar, menampilkan logo NalarPublik dan alamat web nalarpublik.vercel.app.
+
+"NalarPublik membuktikan bahwa transparansi anggaran bukan sekadar memajang angka, melainkan memastikan bahwa setiap rupiah uang rakyat dialokasikan pada masalah yang paling mendesak secara adil dan terukur.
+Dari Toba, kami membangun standar baru tata kelola anggaran daerah yang berbasis bukti, cerdas, dan transparan.
+Saya Rony Pangaribuan, mewakili seluruh tim pengembang NalarPublik, mengucapkan terima kasih.
+Horas, salam sehat untuk kita semua."
