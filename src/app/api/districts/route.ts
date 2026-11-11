@@ -2,10 +2,31 @@ import { NextResponse } from 'next/server'
 import { INITIAL_DISTRICTS } from '@/lib/data'
 import { calculateOverallGap, calculateGapStatus } from '@/lib/gap-calculator'
 import { District } from '@/types'
+import { supabase } from '@/lib/supabase'
 
 const memoryDistricts: District[] = [...INITIAL_DISTRICTS]
 
 export async function GET() {
+  if (supabase) {
+    try {
+      const { data, error } = await supabase.from('districts').select('*').order('name')
+      if (!error && data && data.length > 0) {
+        const enriched = (data as District[]).map((d) => ({
+          ...d,
+          overall_gap_score: calculateOverallGap(d),
+          gap_status: calculateGapStatus(d),
+        }))
+        return NextResponse.json({
+          source: 'supabase_postgres',
+          last_synced: new Date().toISOString(),
+          data: enriched,
+        })
+      }
+    } catch {
+      // Fallback ke in-memory jika query database terkendala
+    }
+  }
+
   return NextResponse.json({
     source: 'live_bps_hybrid',
     last_synced: new Date().toISOString(),
@@ -25,6 +46,32 @@ export async function PUT(request: Request) {
     const total = budget_infra_pct + budget_health_pct + budget_edu_pct + budget_social_pct
     if (total !== 100) {
       return NextResponse.json({ error: 'Total alokasi 4 sektor wajib berjumlah tepat 100%' }, { status: 400 })
+    }
+
+    if (supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('districts')
+          .update({
+            budget_infra_pct,
+            budget_health_pct,
+            budget_edu_pct,
+            budget_social_pct,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', id)
+          .select()
+          .single()
+
+        if (!error && data) {
+          const updated = data as District
+          updated.overall_gap_score = calculateOverallGap(updated)
+          updated.gap_status = calculateGapStatus(updated)
+          return NextResponse.json({ success: true, data: updated })
+        }
+      } catch {
+        // Fallback ke in-memory
+      }
     }
 
     const index = memoryDistricts.findIndex((d) => d.id === id)

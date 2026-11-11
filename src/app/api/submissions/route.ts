@@ -1,10 +1,29 @@
 import { NextResponse } from 'next/server'
 import { INITIAL_SUBMISSIONS } from '@/lib/data'
 import { CitizenSubmission } from '@/types'
+import { supabase } from '@/lib/supabase'
 
 const memorySubmissions: CitizenSubmission[] = [...INITIAL_SUBMISSIONS]
 
 export async function GET() {
+  if (supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('citizen_submissions')
+        .select('*')
+        .order('created_at', { ascending: false })
+
+      if (!error && data && data.length > 0) {
+        return NextResponse.json({
+          total: data.length,
+          data,
+        })
+      }
+    } catch {
+      // Fallback ke in-memory
+    }
+  }
+
   return NextResponse.json({
     total: memorySubmissions.length,
     data: memorySubmissions,
@@ -38,6 +57,30 @@ export async function POST(request: Request) {
       alloc_social_pct,
       notes: notes || undefined,
       created_at: new Date().toISOString(),
+    }
+
+    if (supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('citizen_submissions')
+          .insert({
+            district_id: newSub.district_id,
+            alloc_infra_pct: newSub.alloc_infra_pct,
+            alloc_health_pct: newSub.alloc_health_pct,
+            alloc_edu_pct: newSub.alloc_edu_pct,
+            alloc_social_pct: newSub.alloc_social_pct,
+            notes: newSub.notes,
+          })
+          .select()
+          .single()
+
+        if (!error && data) {
+          memorySubmissions.unshift(data as CitizenSubmission)
+          return NextResponse.json({ success: true, data }, { status: 201 })
+        }
+      } catch {
+        // Fallback ke in-memory
+      }
     }
 
     memorySubmissions.unshift(newSub)

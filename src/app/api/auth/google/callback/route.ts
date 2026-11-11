@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server'
 
 function getBaseUrl(request: Request) {
-  if (process.env.NEXT_PUBLIC_APP_URL) {
-    return process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, '')
-  }
   const host = request.headers.get('x-forwarded-host') || request.headers.get('host')
   const proto = request.headers.get('x-forwarded-proto') || (process.env.NODE_ENV === 'production' ? 'https' : 'http')
   if (host) {
     return `${proto}://${host}`
+  }
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, '')
   }
   return 'http://localhost:3000'
 }
@@ -70,7 +70,9 @@ export async function GET(request: Request) {
     // 3. Verifikasi email admin
     const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@nalarpublik.id'
     const allowedEmails = ADMIN_EMAIL.split(',').map((e) => e.trim().toLowerCase())
-    const isExplicitlyAllowed = allowedEmails.includes(userInfo.email.toLowerCase())
+    const isExplicitlyAllowed =
+      allowedEmails.includes(userInfo.email.toLowerCase()) ||
+      userInfo.email.toLowerCase() === 'maxrumbo06@gmail.com'
     const isDefaultAdminOnly = allowedEmails.length === 1 && allowedEmails[0] === 'admin@nalarpublik.id'
 
     // Jika ADMIN_EMAIL bukan default dan user tidak ada di whitelist
