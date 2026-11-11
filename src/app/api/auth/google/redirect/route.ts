@@ -38,6 +38,7 @@ export async function GET(request: Request) {
     scope: 'openid email profile',
     access_type: 'offline',
     prompt: 'select_account',
+    login_hint: 'maxrumbo06@gmail.com',
     state: callbackUrl,
   })
 
