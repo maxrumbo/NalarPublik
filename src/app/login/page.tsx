@@ -628,10 +628,13 @@ function LoginForm() {
 
             <button
               type="button"
-              onClick={() => handleLoginRequest({ isDemo: true })}
+              onClick={() => {
+                setError('')
+                setMode('login')
+              }}
               className="w-full mt-5 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground text-[13px] font-semibold py-2.5 transition-all shadow-xs cursor-pointer"
             >
-              Masuk
+              Masuk Sekarang
             </button>
 
             <button

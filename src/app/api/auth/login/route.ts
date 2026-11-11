@@ -11,39 +11,34 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { email, password, isDemo } = body as {
+    const { email, password } = body as {
       email?: string
       password?: string
-      isDemo?: boolean
     }
 
     // Kredensial admin dari env atau default
-    const ADMIN_EMAIL = (process.env.ADMIN_EMAIL ?? 'admin@nalarpublik.id').trim()
+    const ADMIN_EMAIL = (process.env.ADMIN_EMAIL ?? 'admin@nalarpublik.id,maxrumbo06@gmail.com').trim()
     const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD ?? 'AdminNalar2026!').trim()
     const allowedEmails = ADMIN_EMAIL.split(',').map((e) => e.trim().toLowerCase())
 
     let isValid = false
     let userEmail = 'admin@nalarpublik.id'
 
-    if (isDemo) {
-      isValid = true
-    } else {
-      if (!email || !password) {
-        return NextResponse.json(
-          { success: false, error: 'Email dan kata sandi wajib diisi.' },
-          { status: 400 },
-        )
-      }
-
-      const cleanEmail = email.trim().toLowerCase()
-      const cleanPass = password.trim()
-      userEmail = cleanEmail
-
-      isValid =
-        (allowedEmails.includes(cleanEmail) && (cleanPass === ADMIN_PASSWORD || cleanPass === 'AdminNalar2026!')) ||
-        (cleanEmail === 'admin@nalarpublik.id' && (cleanPass === 'AdminNalar2026!' || cleanPass === ADMIN_PASSWORD)) ||
-        (cleanEmail === 'maxrumbo06@gmail.com' && (cleanPass === ADMIN_PASSWORD || cleanPass === 'AdminNalar2026!'))
+    if (!email || !password) {
+      return NextResponse.json(
+        { success: false, error: 'Email dan kata sandi wajib diisi.' },
+        { status: 400 },
+      )
     }
+
+    const cleanEmail = email.trim().toLowerCase()
+    const cleanPass = password.trim()
+    userEmail = cleanEmail
+
+    isValid =
+      (allowedEmails.includes(cleanEmail) && (cleanPass === ADMIN_PASSWORD || cleanPass === 'AdminNalar2026!')) ||
+      (cleanEmail === 'admin@nalarpublik.id' && (cleanPass === 'AdminNalar2026!' || cleanPass === ADMIN_PASSWORD)) ||
+      (cleanEmail === 'maxrumbo06@gmail.com' && (cleanPass === ADMIN_PASSWORD || cleanPass === 'AdminNalar2026!'))
 
     if (!isValid) {
       return NextResponse.json(

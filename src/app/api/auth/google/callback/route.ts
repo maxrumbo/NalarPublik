@@ -67,16 +67,15 @@ export async function GET(request: Request) {
       return NextResponse.redirect(`${loginUrl}?error=no_email`)
     }
 
-    // 3. Verifikasi email admin
-    const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@nalarpublik.id'
+    // 3. Verifikasi whitelist email admin
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@nalarpublik.id,maxrumbo06@gmail.com'
     const allowedEmails = ADMIN_EMAIL.split(',').map((e) => e.trim().toLowerCase())
     const isExplicitlyAllowed =
       allowedEmails.includes(userInfo.email.toLowerCase()) ||
       userInfo.email.toLowerCase() === 'maxrumbo06@gmail.com'
-    const isDefaultAdminOnly = allowedEmails.length === 1 && allowedEmails[0] === 'admin@nalarpublik.id'
 
-    // Jika ADMIN_EMAIL bukan default dan user tidak ada di whitelist
-    if (!isExplicitlyAllowed && !isDefaultAdminOnly) {
+    // Jika email Google bukan admin resmi, tolak akses!
+    if (!isExplicitlyAllowed) {
       return NextResponse.redirect(`${loginUrl}?error=not_authorized`)
     }
 
